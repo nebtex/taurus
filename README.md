@@ -15,4 +15,11 @@ omniql client for javascript based on mobx
 * observable omniql objects
 * observable omniql online queries. 
 
+## archiecture
+
+taurus, will store all the omniql objects as observables, in a ResourceMap, see `@nebtex/hashmaps`, and will allow to the programer to automatically listen for changes, in the ResourceMap storage, also run both offline and online queries, commands,etc. 
+
+
+
+
 
