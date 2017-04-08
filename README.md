@@ -1,4 +1,5 @@
 # taurus
+
 omniql client for javascript based on mobx
 
 ## similar or software that inspired taurus
@@ -20,6 +21,9 @@ omniql client for javascript based on mobx
 taurus, will store all the omniql objects as observables, in a ResourceMap, see `@nebtex/hashmaps`, and will allow to the programer to automatically listen for changes, in the ResourceMap storage, also run both offline and online queries, commands,etc. 
 
 
+## offline api
+
+the offline api allow to the programer to create offline queries (that will never hit the backend), and run againts the object stored in the ResourceMap, when a object is add or delete to offline queries will run again using interested graph subscription, and only the queries that could be affected by this event will rerun again. 
 
 
 
