@@ -20,12 +20,15 @@
   "homepage": "https://github.com/nebtex/taurus#readme",
   "devDependencies": {
     "@types/core-js": "^0.9.41",
+    "@types/minimatch": "^2.0.29",
     "ava": "^0.19.1",
     "codecov": "^2.1.0",
     "nyc": "^10.2.0",
     "typescript": "^2.2.2"
   },
   "dependencies": {
+    "@nebtex/hashmaps": "^0.1.0",
+    "minimatch": "^3.0.3",
     "mobx": "^3.1.8"
   }
 }
