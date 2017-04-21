@@ -1,0 +1,31 @@
+{
+  "name": "@nebtex/hashmaps",
+  "version": "0.1.0",
+  "description": "Omniql client for javascript based on Mobx",
+  "module": "commonjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "tsc && nyc --reporter=lcov ava",
+    "coverage": "codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebtex/taurus.git"
+  },
+  "author": "NebTex",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nebtex/taurus/issues"
+  },
+  "homepage": "https://github.com/nebtex/taurus#readme",
+  "devDependencies": {
+    "@types/core-js": "^0.9.41",
+    "ava": "^0.19.1",
+    "codecov": "^2.1.0",
+    "nyc": "^10.2.0",
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "mobx": "^3.1.8"
+  }
+}
