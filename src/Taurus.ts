@@ -1,17 +1,32 @@
 import { IObservable } from 'mobx';
-import { HashMap } from '@nebtex/hashmaps';
-import { Minimatch }from 'minimatch';
+import { ObservableHashMap } from '@nebtex/hashmaps';
+import { Minimatch, filter }from 'minimatch';
+
+export class HashMapOffline<K, V> extends ObservableHashMap<K, V> {
+  constructor(){
+    super();
+  }
+
+  protected objectHash(key:any){
+    return key.join('/');
+  }
+
+  filterByHash(pattern:string) {
+    const filteredValues = this.internalMap.keys()
+      .filter(filter(pattern))
+      .map(key => this.internalMap.get(key));
+
+    return filteredValues;
+  }
+}
 
 export class Offline<K, V>{
-  hashMap: HashMap<K, V>;
-  constructor(hashMap:HashMap<K, V>) {
+  hashMap: HashMapOffline<K, V>;
+  constructor(hashMap:HashMapOffline<K, V>) {
     this.hashMap = hashMap;
   }
 
-  // query(app:string, pattern:string): IObservable{
-  //   const minimatch = new Minimatch(pattern);
-  //   const regexp = minimatch.regexp;
-
-  //   return 
-  // }
+  query(pattern:string){
+    return this.hashMap.filterByHash(pattern);
+  }
 }
