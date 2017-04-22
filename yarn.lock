@@ -37,9 +37,9 @@
     ansi-styles "^2.2.1"
     esutils "^2.0.2"
 
-"@nebtex/hashmaps@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@nebtex/hashmaps/-/hashmaps-0.1.0.tgz#f9a19364c9eba484825412d14101df3c74be8aa4"
+"@nebtex/hashmaps@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@nebtex/hashmaps/-/hashmaps-0.1.1.tgz#432b39736aa41b6c360699fc53880af8c5b77c22"
   dependencies:
     mobx "^3.1.8"
     object-hash "^1.1.7"
