@@ -3,10 +3,10 @@ import { ObservableHashMap } from '@nebtex/hashmaps';
 import test from 'ava';
 
 
-let hashMap: HashMapOffline<Array<number>, any>;
+let hashMap: HashMapOffline<any>;
 
 test.beforeEach(t => {
-  hashMap = new HashMapOffline<Array<number>, {}>();
+  hashMap = new HashMapOffline<any>();
 });
 
 test('mock test', t => {

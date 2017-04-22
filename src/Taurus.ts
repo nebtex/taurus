@@ -2,7 +2,7 @@ import { IObservable } from 'mobx';
 import { ObservableHashMap } from '@nebtex/hashmaps';
 import { Minimatch, filter }from 'minimatch';
 
-export class HashMapOffline<K, V> extends ObservableHashMap<K, V> {
+export class HashMapOffline<V> extends ObservableHashMap<Array<number>, V> {
   constructor(){
     super();
   }
@@ -21,8 +21,8 @@ export class HashMapOffline<K, V> extends ObservableHashMap<K, V> {
 }
 
 export class Offline<K, V>{
-  hashMap: HashMapOffline<K, V>;
-  constructor(hashMap:HashMapOffline<K, V>) {
+  hashMap: HashMapOffline<V>;
+  constructor(hashMap:HashMapOffline<V>) {
     this.hashMap = hashMap;
   }
 
