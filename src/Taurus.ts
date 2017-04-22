@@ -20,7 +20,7 @@ export class HashMapOffline<V> extends ObservableHashMap<Array<number>, V> {
   }
 }
 
-export class Offline<K, V>{
+export class Offline<V>{
   hashMap: HashMapOffline<V>;
   constructor(hashMap:HashMapOffline<V>) {
     this.hashMap = hashMap;
