@@ -1,10 +1,13 @@
 {
-  "name": "@nebtex/hashmaps",
+  "name": "@nebtex/taurus",
   "version": "0.1.0",
   "description": "Omniql client for javascript based on Mobx",
   "module": "commonjs",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "npm run tsc",
+    "tsc": "tsc",
     "test": "tsc && nyc --reporter=lcov ava",
     "coverage": "codecov"
   },
