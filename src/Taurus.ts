@@ -1,8 +1,8 @@
-import { IObservable } from 'mobx';
+import { ObservableMap } from 'mobx';
 import { ObservableHashMap } from '@nebtex/hashmaps';
 import { Minimatch, filter }from 'minimatch';
 
-export class HashMapOffline<V> extends ObservableHashMap<Array<number>, V> {
+export class ResourceMap<V> extends ObservableHashMap<Array<number>, V> {
   constructor(){
     super();
   }
@@ -21,12 +21,18 @@ export class HashMapOffline<V> extends ObservableHashMap<Array<number>, V> {
 }
 
 export class Offline<V>{
-  hashMap: HashMapOffline<V>;
-  constructor(hashMap:HashMapOffline<V>) {
-    this.hashMap = hashMap;
+  applications: Map<string, ResourceMap<V>> = new Map();
+
+  register(app:string, hashMap:ResourceMap<V>) {
+    this.applications.set(app, hashMap);
   }
 
-  query(pattern:string){
-    return this.hashMap.filterByHash(pattern);
+  query(app:string, pattern:string, handler: (queryset:Array<V>) => void): void{
+    const hashMap = this.applications.get(app);
+    if(!hashMap)
+      return void 0
+    
+    const queryset = hashMap.filterByHash(pattern);
+    handler(queryset);
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@nebtex/taurus",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Omniql client for javascript based on Mobx",
   "module": "commonjs",
   "main": "dist/index.js",
